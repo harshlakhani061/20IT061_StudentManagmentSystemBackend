@@ -16,6 +16,12 @@ public class StudentController {
     StudentRepository studentRepository;
     // Mappings - URL endpoints
     // Get the list of all student
+
+    @GetMapping("/")
+    public String displayWelcomeMessage() {
+        return "<center><h1>Welcome to the Spring Boot Security!!!</h1></center>";
+    }
+
     @GetMapping("/listStudents")
     public List<Student> getAllStudents(){
         return studentRepository.findAll();
